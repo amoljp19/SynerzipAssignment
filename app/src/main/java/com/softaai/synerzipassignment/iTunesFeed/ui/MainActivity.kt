@@ -1,6 +1,7 @@
-package com.softaai.synerzipassignment
+package com.softaai.synerzipassignment.iTunesFeed.ui
 
 import android.os.Bundle
+import com.softaai.synerzipassignment.R
 import com.softaai.synerzipassignment.base.DatabindingActivity
 import com.softaai.synerzipassignment.databinding.ActivityMainBinding
 

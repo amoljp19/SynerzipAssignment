@@ -1,4 +1,4 @@
-package com.softaai.synerzipassignment.viewmodel
+package com.softaai.synerzipassignment.iTunesFeed.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

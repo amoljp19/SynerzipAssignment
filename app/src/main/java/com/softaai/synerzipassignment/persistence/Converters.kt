@@ -8,7 +8,7 @@ import com.softaai.synerzipassignment.model.*
 import java.lang.reflect.Type
 
 
-object Converters {
+class Converters {
 //    @TypeConverter
 //    fun fromString(value: String?): ArrayList<String> {
 //        val listType: Type = object : TypeToken<ArrayList<String?>?>() {}.type

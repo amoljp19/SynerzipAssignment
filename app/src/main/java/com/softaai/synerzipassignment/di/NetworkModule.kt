@@ -7,7 +7,7 @@ import com.softaai.synerzipassignment.utils.Constants
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 val networkModule = module {
 
@@ -21,7 +21,7 @@ val networkModule = module {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
             .baseUrl(Constants.URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
 

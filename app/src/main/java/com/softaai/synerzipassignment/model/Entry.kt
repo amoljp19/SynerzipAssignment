@@ -1,11 +1,15 @@
 package com.softaai.synerzipassignment.model
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
+@Entity
 data class Entry(
     @Json(name = "category")
     val category: Category,
+    @field:PrimaryKey
     @Json(name = "id")
     val id: Id,
     @Json(name = "im:artist")

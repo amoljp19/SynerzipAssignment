@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SynerzipAssignment</string>
+    <string name="database">iTunesFeed.db</string>
 </resources>

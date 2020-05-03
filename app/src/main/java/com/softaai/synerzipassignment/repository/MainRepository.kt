@@ -1,7 +1,6 @@
 package com.softaai.synerzipassignment.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.softaai.synerzipassignment.model.ApiFeedResponse
 import com.softaai.synerzipassignment.model.Entry
 import com.softaai.synerzipassignment.network.ApiResponse
 import com.softaai.synerzipassignment.network.ITunesClient
@@ -31,11 +30,11 @@ class MainRepository constructor(
                 isLoading = false
                 when (response) {
                     is ApiResponse.Success -> {
-                       response.data.let {
-                           feedEntries = it!!.feed.entry
-                           liveData.postValue(it.feed.entry)
-                           apiFeedResponseDao.insertEntryList(it.feed.entry)
-                       }
+                        response.data.let {
+                            feedEntries = it!!.feed.entry
+                            liveData.postValue(it.feed.entry)
+                            apiFeedResponseDao.insertEntryList(it.feed.entry)
+                        }
                     }
                     is ApiResponse.Failure.Error -> error(response.message())
                     is ApiResponse.Failure.Exception -> error(response.message())

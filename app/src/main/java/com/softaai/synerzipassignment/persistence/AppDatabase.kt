@@ -2,9 +2,11 @@ package com.softaai.synerzipassignment.persistence
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.softaai.synerzipassignment.model.ApiFeedResponse
+import androidx.room.TypeConverters
+import com.softaai.synerzipassignment.model.Entry
 
-@Database(entities = [ApiFeedResponse::class], version = 1, exportSchema = true)
+@Database(entities = [Entry::class], version = 1, exportSchema = true)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun apiFeedResponseDao(): ApiFeedResponseDao

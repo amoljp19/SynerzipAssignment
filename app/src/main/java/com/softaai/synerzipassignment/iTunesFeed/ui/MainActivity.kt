@@ -16,16 +16,19 @@ class MainActivity : DatabindingActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initView()
+        //initView()
+        binding.viewModel = getViewModel<MainViewModel>().apply { fetchFeedEntryList() }
+        binding.lifecycleOwner = this@MainActivity
+        binding.adapter = FeedEntryListRecyclerAdapter()
     }
 
     private fun initView() {
-        binding.recyclerView.layoutManager = GridLayoutManager(this,2)
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         binding.recyclerView.addItemDecoration(GridItemDecoration(10, 2))
 
-        getViewModel<MainViewModel>().apply { fetchFeedEntryList()}
-        binding.recyclerView.adapter = FeedEntryListRecyclerAdapter()
+        getViewModel<MainViewModel>().apply { fetchFeedEntryList() }
+        //binding.recyclerView.adapter = FeedEntryListRecyclerAdapter()
 
     }
 

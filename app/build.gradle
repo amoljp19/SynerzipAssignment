@@ -47,7 +47,7 @@ dependencies {
     def archCompomentVersion = "2.0.0"
 
     // di
-    def koinVersion = "2.0.1"
+    def koinVersion = "2.1.1"
 
     // network
     def retrofitVersion = "2.6.0"

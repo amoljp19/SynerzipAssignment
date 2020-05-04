@@ -40,7 +40,6 @@
             android:clipToPadding="false"
             android:padding="4dp"
             app:adapter="@{adapter}"
-            app:adapterFeedEntryList="@{viewModel.feedEntryListLiveData}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             app:toast="@{viewModel.toastLiveData}"

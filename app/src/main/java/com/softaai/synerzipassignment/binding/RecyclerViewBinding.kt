@@ -19,9 +19,9 @@ fun bindToast(view: RecyclerView, text: LiveData<String>) {
     }
 }
 
-@BindingAdapter("adapterFeedEntryList")
-fun bindAdapterPosterList(view: RecyclerView, entries: List<Entry>?) {
-    entries.let {
-        (view.adapter as? FeedEntryListRecyclerAdapter)?.setEntryList(it)
-    }
-}
+//@BindingAdapter("adapterFeedEntryList")
+//fun bindAdapterEntryList(view: RecyclerView, entries: List<Entry>) {
+//    entries.let {
+//        (view.adapter as? FeedEntryListRecyclerAdapter)?.setEntryList(it)
+//    }
+//}

@@ -16,7 +16,7 @@ class MainViewModel constructor(
 ) : ViewModel() {
 
     private var feedEntryFetchingLiveData: MutableLiveData<Boolean> = MutableLiveData()
-    //val feedEntryListLiveData: LiveData<List<Entry>>
+    val feedEntryListLiveData: LiveData<List<Entry>>
 
     val toastLiveData: MutableLiveData<String> = MutableLiveData()
 
@@ -31,14 +31,16 @@ class MainViewModel constructor(
 
         Timber.d("injection MainViewModel")
 
-//        this.feedEntryFetchingLiveData.switchMap {
-//            launchOnViewModelScope {
-//                this.mainRepository.loadApiFeedResponse {
-//                    this.toastLiveData.postValue(it)
-//                }
-//            }
-//        }
+        this.feedEntryListLiveData = this.feedEntryFetchingLiveData.switchMap {
+            launchOnViewModelScope {
+                this.mainRepository.loadApiFeedResponse {
+                    this.toastLiveData.postValue(it)
+                }
+            }
+        }
     }
+
+    fun fetchFeedEntryList() = this.feedEntryFetchingLiveData.postValue(true)
 
     fun getFeedEntryList() : List<Entry>{
         var x:List<Entry> = listOf()

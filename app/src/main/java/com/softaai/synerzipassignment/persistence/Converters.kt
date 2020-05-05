@@ -23,7 +23,7 @@ class Converters {
 
 
     @TypeConverter
-    fun fromStringToCategory(value: String?): Category {
+    fun fromStringToCategory(value: String?): Category? {
         val categoryType: Type = object : TypeToken<Category>() {}.type
         return Gson().fromJson(value, categoryType)
     }
@@ -47,7 +47,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromStringToImArtist(value: String?): ImArtist {
+    fun fromStringToImArtist(value: String?): ImArtist? {
         val imArtistType: Type = object : TypeToken<ImArtist>() {}.type
         return Gson().fromJson(value, imArtistType)
     }
@@ -60,7 +60,7 @@ class Converters {
 
 
     @TypeConverter
-    fun fromStringToImContentType(value: String?): ImContentType {
+    fun fromStringToImContentType(value: String?): ImContentType? {
         val imContentType: Type = object : TypeToken<ImContentType>() {}.type
         return Gson().fromJson(value, imContentType)
     }
@@ -84,7 +84,7 @@ class Converters {
 //    }
 
     @TypeConverter
-    fun fromStringToImImageList(value: String?): List<ImImage> {
+    fun fromStringToImImageList(value: String?): List<ImImage>? {
         val imImageListType: Type = object : TypeToken<List<ImImage?>?>() {}.type
         return Gson().fromJson(value, imImageListType)
     }
@@ -97,7 +97,7 @@ class Converters {
 
 
     @TypeConverter
-    fun fromStringToImName(value: String?): ImName {
+    fun fromStringToImName(value: String?): ImName? {
         val imNameType: Type = object : TypeToken<ImName>() {}.type
         return Gson().fromJson(value, imNameType)
     }
@@ -109,7 +109,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromStringToImPrice(value: String?): ImPrice {
+    fun fromStringToImPrice(value: String?): ImPrice? {
         val imPriceType: Type = object : TypeToken<ImPrice>() {}.type
         return Gson().fromJson(value, imPriceType)
     }
@@ -121,7 +121,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromStringToImReleaseDate(value: String?): ImReleaseDate {
+    fun fromStringToImReleaseDate(value: String?): ImReleaseDate? {
         val imReleaseDateType: Type = object : TypeToken<ImReleaseDate>() {}.type
         return Gson().fromJson(value, imReleaseDateType)
     }
@@ -135,7 +135,7 @@ class Converters {
 
 
     @TypeConverter
-    fun fromStringToLink(value: String?): Link {
+    fun fromStringToLink(value: String?): Link? {
         val linkType: Type = object : TypeToken<Link>() {}.type
         return Gson().fromJson(value, linkType)
     }
@@ -147,7 +147,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromStringToRights(value: String?): Rights {
+    fun fromStringToRights(value: String?): Rights? {
         val rightsType: Type = object : TypeToken<Rights>() {}.type
         return Gson().fromJson(value, rightsType)
     }
@@ -159,7 +159,7 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromStringToTitle(value: String?): Title {
+    fun fromStringToTitle(value: String?): Title? {
         val titleType: Type = object : TypeToken<Title>() {}.type
         return Gson().fromJson(value, titleType)
     }

@@ -28,6 +28,6 @@ data class Entry(
     val link: Link,
     @Json(name = "rights")
     val rights: Rights,
-    @Json(name = "title")
+     @Json(name = "title")
     val title: Title
 )

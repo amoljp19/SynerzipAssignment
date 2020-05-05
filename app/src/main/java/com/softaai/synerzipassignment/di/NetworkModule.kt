@@ -8,8 +8,10 @@ import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import com.squareup.moshi.Moshi
 
 val networkModule = module {
+
 
     single {
         OkHttpClient.Builder()
@@ -21,7 +23,7 @@ val networkModule = module {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
             .baseUrl(Constants.URL)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(/*Moshi.Builder().build()*/))
             .build()
     }
 

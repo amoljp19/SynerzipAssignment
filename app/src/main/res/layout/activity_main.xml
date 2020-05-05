@@ -47,8 +47,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             tools:listitem="@layout/item_feed_entry" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

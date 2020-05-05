@@ -107,6 +107,7 @@ dependencies {
     implementation "org.koin:koin-android:$koinVersion"
     implementation "org.koin:koin-android-scope:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
+    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
 
     // network
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"

@@ -23,32 +23,6 @@ class MainRepository constructor(
 
     }
 
-
-    suspend fun loadApiFeedResponse1() : List<Entry>{
-        val liveData = MutableLiveData<List<Entry>>()
-         var feedEntries = apiFeedResponseDao.getEntryList()
-        if (feedEntries.isEmpty()) {
-            isLoading = true
-            iTunesClient.fetchApiFeedResponse { response ->
-                isLoading = false
-                when (response) {
-                    is ApiResponse.Success -> {
-                        response.data.let {
-                            feedEntries = it!!.feed.entry
-                            liveData.postValue(it.feed.entry)
-                            apiFeedResponseDao.insertEntryList(it.feed.entry)
-                        }
-                    }
-                    is ApiResponse.Failure.Error -> error(response.message())
-                    is ApiResponse.Failure.Exception -> error(response.message())
-                }
-            }
-        }
-        //liveData.apply { postValue(feedEntries) }
-        return feedEntries
-    }
-
-
     suspend fun loadApiFeedResponse(error: (String) -> Unit) = withContext(Dispatchers.IO) {
         val liveData = MutableLiveData<List<Entry>>()
         var feedEntries = apiFeedResponseDao.getEntryList()

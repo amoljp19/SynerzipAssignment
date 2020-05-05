@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="entry"
             type="com.softaai.synerzipassignment.model.Entry" />
@@ -35,8 +36,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadImage="@{entry.imImage}"
-                tools:src="@drawable/ic_launcher_foreground" />
+                tools:src="@drawable/ic_launcher_round" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/item_entry_title"

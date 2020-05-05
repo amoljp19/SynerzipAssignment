@@ -24,6 +24,7 @@ class FeedEntryListRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolde
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         val movieViewHolder = viewHolder as EntryListViewHolder
         movieViewHolder.bindView(listOfEntries!!.get(position))
+        movieViewHolder.onClick(listOfEntries!!.get(position))
     }
 
     fun setEntryList(listOfEntries: List<Entry>?) {

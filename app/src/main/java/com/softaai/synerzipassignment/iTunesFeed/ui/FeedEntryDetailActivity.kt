@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.softaai.synerzipassignment.R
 import com.softaai.synerzipassignment.base.DatabindingActivity
 import com.softaai.synerzipassignment.databinding.ActivityFeedEntryDetailBinding
+import com.softaai.synerzipassignment.extension.applyMaterialTransform
 import com.softaai.synerzipassignment.iTunesFeed.viewmodel.FeedEntryDetailViewModel
 import com.softaai.synerzipassignment.model.Entry
 import com.softaai.synerzipassignment.model.Id
@@ -29,14 +30,20 @@ class FeedEntryDetailActivity : DatabindingActivity() {
 
         val entry =
             getViewModel<FeedEntryDetailViewModel>().getEntry(intent.getParcelableExtra(entryKey) as Id)
-        //applyMaterialTransform(entry.title.label)
+        applyMaterialTransform(entry.title.label)
         binding.apply {
             this.entry = entry
             activity = this@FeedEntryDetailActivity
             container = detailContainer
             fab = fabMore
-            Glide.with(this@FeedEntryDetailActivity).load(entry.imImage[0].label)
-                    .into(feed_entry_detail_background)
+            Glide.with(this@FeedEntryDetailActivity)
+                .load(entry.imImage[2].label)
+                .override(
+                    entry.imImage[2].attributes.height.toInt(),
+                    entry.imImage[2].attributes.height.toInt()
+                )
+                .centerCrop()
+                .into(feed_entry_detail_background)
         }
     }
 
@@ -49,20 +56,23 @@ class FeedEntryDetailActivity : DatabindingActivity() {
 
     companion object {
         private const val entryKey = "entryKey"
+
         @SuppressLint("NewApi")
         fun startActivityModel(context: Context?, startView: View, entry: Entry) {
             if (context is Activity) {
                 val intent = Intent(context, FeedEntryDetailActivity::class.java)
                 intent.putExtra(
-                    entryKey, entry.id)
-                val options = ActivityOptions.makeSceneTransitionAnimation(context,
+                    entryKey, entry.id
+                )
+                val options = ActivityOptions.makeSceneTransitionAnimation(
+                    context,
                     startView, entry.title.label
                 )
                 context.startActivity(intent, options.toBundle())
             }
         }
 
-        fun startActivity(context: Context?, entry: Entry){
+        fun startActivity(context: Context?, entry: Entry) {
             val i = Intent(context, FeedEntryDetailActivity::class.java)
             i.putExtra(entryKey, entry.id)
             context?.startActivity(i)

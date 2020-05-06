@@ -7,11 +7,11 @@ import com.softaai.synerzipassignment.R
 
 fun AppCompatActivity.simpleToolbarWithHome(toolbar: MaterialToolbar, title_: String = "") {
     setSupportActionBar(toolbar)
-//    supportActionBar?.run {
-//        setHomeAsUpIndicator(R.drawable.ic_arrow_back)
-//        setDisplayHomeAsUpEnabled(true)
-//        //title = title_
-//    }
+    supportActionBar?.run {
+        setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        setDisplayHomeAsUpEnabled(true)
+        title = title_
+    }
 }
 
 @BindingAdapter("simpleToolbarWithHome", "simpleToolbarTitle")

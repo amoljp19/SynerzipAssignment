@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.softaai.synerzipassignment.R
 import com.softaai.synerzipassignment.base.DatabindingActivity
 import com.softaai.synerzipassignment.databinding.ActivityMainBinding
+import com.softaai.synerzipassignment.extension.applyExitMaterialTransform
 import com.softaai.synerzipassignment.iTunesFeed.adapter.FeedEntryListRecyclerAdapter
 import com.softaai.synerzipassignment.iTunesFeed.adapter.GridItemDecoration
 import com.softaai.synerzipassignment.iTunesFeed.viewmodel.MainViewModel
@@ -13,6 +14,7 @@ class MainActivity : DatabindingActivity() {
     private val binding: ActivityMainBinding by binding(R.layout.activity_main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        applyExitMaterialTransform()
         super.onCreate(savedInstanceState)
         binding.viewModel = getViewModel<MainViewModel>().apply { fetchFeedEntryList() }
         binding.lifecycleOwner = this@MainActivity

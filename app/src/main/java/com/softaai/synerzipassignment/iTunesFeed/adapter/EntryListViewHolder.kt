@@ -9,8 +9,11 @@ import kotlinx.android.synthetic.main.item_feed_entry.view.*
 
 class EntryListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bindView(entry: Entry) {
-       Glide.with(itemView.context).load(entry.imImage[0].label).into(itemView.item_entry_image)
         itemView.item_entry_title.text = entry.title.label
         itemView.item_entry_rights.text = entry.rights.label
+        Glide.with(itemView.context)
+            .load(entry.imImage[2].label)
+            .centerCrop()
+            .into(itemView.item_entry_image)
     }
 }

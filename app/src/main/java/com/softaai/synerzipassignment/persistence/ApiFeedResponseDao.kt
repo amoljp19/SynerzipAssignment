@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.softaai.synerzipassignment.model.Entry
+import com.softaai.synerzipassignment.model.Id
 
 
 @Dao
@@ -14,7 +15,7 @@ interface ApiFeedResponseDao {
     fun insertEntryList(entries: List<Entry>)
 
     @Query("SELECT * FROM Entry WHERE id = :id_")
-    fun getEntry(id_: Long): Entry
+    fun getEntry(id_: Id): Entry
 
     @Query("SELECT * FROM Entry")
     fun getEntryList(): List<Entry>

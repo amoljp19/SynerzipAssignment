@@ -16,7 +16,7 @@ class MainActivity : DatabindingActivity() {
         super.onCreate(savedInstanceState)
         binding.viewModel = getViewModel<MainViewModel>().apply { fetchFeedEntryList() }
         binding.lifecycleOwner = this@MainActivity
-        binding.recyclerView!!.addItemDecoration(GridItemDecoration(15, 2))
+        binding.recyclerView.addItemDecoration(GridItemDecoration(15, 2))
         binding.adapter = FeedEntryListRecyclerAdapter()
     }
 }

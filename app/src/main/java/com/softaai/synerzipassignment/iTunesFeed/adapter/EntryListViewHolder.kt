@@ -13,8 +13,4 @@ class EntryListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.item_entry_title.text = entry.title.label
         itemView.item_entry_rights.text = entry.rights.label
     }
-
-    fun onClick(entry: Entry) =
-        FeedEntryDetailActivity.startActivityModel(itemView.context, itemView, entry)
-
 }

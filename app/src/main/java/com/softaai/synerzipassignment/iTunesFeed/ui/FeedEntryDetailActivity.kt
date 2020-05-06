@@ -35,11 +35,8 @@ class FeedEntryDetailActivity : DatabindingActivity() {
             activity = this@FeedEntryDetailActivity
             container = detailContainer
             fab = fabMore
-//            if(!entry.equals(null)) {
-//                Glide.with(this@FeedEntryDetailActivity).load(entry.imImage[0].label)
-//                    .into(feed_entry_detail_background)
-//            }
-
+            Glide.with(this@FeedEntryDetailActivity).load(entry.imImage[0].label)
+                    .into(feed_entry_detail_background)
         }
     }
 

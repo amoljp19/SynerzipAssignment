@@ -1,15 +1,14 @@
 package com.softaai.synerzipassignment.repository
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.softaai.synerzipassignment.model.Entry
 import com.softaai.synerzipassignment.network.ApiResponse
 import com.softaai.synerzipassignment.network.ITunesClient
 import com.softaai.synerzipassignment.network.message
 import com.softaai.synerzipassignment.persistence.ApiFeedResponseDao
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import timber.log.Timber
-import kotlin.coroutines.CoroutineContext
 
 class MainRepository constructor(
     private val iTunesClient: ITunesClient,

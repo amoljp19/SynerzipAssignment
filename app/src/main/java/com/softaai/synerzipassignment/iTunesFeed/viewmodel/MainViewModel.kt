@@ -1,6 +1,8 @@
 package com.softaai.synerzipassignment.iTunesFeed.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.switchMap
 import com.softaai.synerzipassignment.base.LiveCoroutinesViewModel
 import com.softaai.synerzipassignment.model.Entry
 import com.softaai.synerzipassignment.repository.MainRepository

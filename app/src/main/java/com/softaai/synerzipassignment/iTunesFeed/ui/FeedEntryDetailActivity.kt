@@ -17,7 +17,6 @@ import com.softaai.synerzipassignment.iTunesFeed.viewmodel.FeedEntryDetailViewMo
 import com.softaai.synerzipassignment.model.Entry
 import com.softaai.synerzipassignment.model.Id
 import kotlinx.android.synthetic.main.activity_feed_entry_detail.*
-import kotlinx.android.synthetic.main.item_feed_entry.view.*
 import org.koin.android.viewmodel.ext.android.getViewModel
 
 class FeedEntryDetailActivity : DatabindingActivity() {

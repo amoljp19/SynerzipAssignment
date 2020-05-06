@@ -9,18 +9,6 @@ import java.lang.reflect.Type
 
 
 class Converters {
-//    @TypeConverter
-//    fun fromString(value: String?): ArrayList<String> {
-//        val listType: Type = object : TypeToken<ArrayList<String?>?>() {}.type
-//        return Gson().fromJson(value, listType)
-//    }
-//
-//    @TypeConverter
-//    fun fromArrayLisr(list: ArrayList<String?>?): String {
-//        val gson = Gson()
-//        return gson.toJson(list)
-//    }
-
 
     @TypeConverter
     fun fromStringToCategory(value: String?): Category? {
@@ -131,7 +119,6 @@ class Converters {
         val gson = Gson()
         return gson.toJson(imReleaseDate)
     }
-
 
 
     @TypeConverter

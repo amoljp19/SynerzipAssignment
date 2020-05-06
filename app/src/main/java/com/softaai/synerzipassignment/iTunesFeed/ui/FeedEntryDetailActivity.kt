@@ -44,6 +44,8 @@ class FeedEntryDetailActivity : DatabindingActivity() {
                 )
                 .centerCrop()
                 .into(feed_entry_detail_background)
+
+
         }
     }
 

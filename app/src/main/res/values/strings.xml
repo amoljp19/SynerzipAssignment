@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">SynerzipAssignment</string>
     <string name="database">iTunesFeed.db</string>
-    <string name="plot">Plot</string>
+    <string name="plot">About this app</string>
 </resources>

@@ -120,8 +120,8 @@
                                 android:ellipsize="end"
                                 android:maxLines="15"
                                 android:maxEms="20"
-                                android:text="@{entry.imName.label}"
-                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                                android:text="@{entry.imArtist.label + '\n' + entry.imReleaseDate.label + '\n' + entry.rights.label}"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 android:textColor="@color/white_87"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/detail_plot_title"
@@ -137,7 +137,7 @@
                     app:layout_collapseMode="pin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:simpleToolbarTitle="@{entry.title.label}"
+                    app:simpleToolbarTitle="@{entry.imName.label}"
                     app:simpleToolbarWithHome="@{activity}"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -169,8 +169,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@{entry.imPrice.label}"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:text="@{entry.imPrice.attributes.amount + ' ' + entry.imPrice.attributes.currency + '\n' + '\n' + entry.id.label}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     android:textColor="@color/white_87"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"

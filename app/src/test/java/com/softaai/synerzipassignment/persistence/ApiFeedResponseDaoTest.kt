@@ -22,7 +22,7 @@ class ApiFeedResponseDaoTest : LocalDatabase() {
     }
 
     @Test
-    fun insertAndLoadFeedEntryList(){
+    fun insertAndLoadFeedEntryList() {
         val mockDataList = mockEntryList()
         apiFeedResponseDao.insertEntryList(mockDataList)
 

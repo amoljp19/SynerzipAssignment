@@ -48,7 +48,7 @@ class MainViewModelTest {
         val mockData = MockTestUtil.mockEntryList()
         whenever(apiFeedResponseDao.getEntryList()).thenReturn(mockData)
 
-        val fetchedData = mainRepository.loadApiFeedResponse{ }
+        val fetchedData = mainRepository.loadApiFeedResponse { }
         val observer: Observer<List<Entry>> = mock()
         fetchedData.observeForever(observer)
 

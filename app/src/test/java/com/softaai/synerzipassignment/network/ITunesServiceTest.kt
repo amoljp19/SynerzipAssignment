@@ -3,13 +3,13 @@ package com.softaai.synerzipassignment.network
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.softaai.synerzipassignment.model.ApiFeedResponse
-import java.io.IOException
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Response
+import java.io.IOException
 
 class ITunesServiceTest : ApiAbstract<ITunesService>() {
 

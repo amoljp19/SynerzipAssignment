@@ -86,9 +86,9 @@ dependencies {
 //
 //    // unit test
 //    def junitVersion = "4.12"
-//    def androidxTest = "1.1.0"
+    def androidxTest = "1.0.0"
 //    def unitTestCoreVersion = "1.2.0"
-//    def robolectricVersion = "4.3"
+    def robolectricVersion = "4.3"
 //    def androidxTestRules = "1.2.0-alpha04"
 //    def mockWebServerVersion = "3.9.0"
     def mockitoKotlinVersion = "2.2.0"
@@ -156,5 +156,8 @@ dependencies {
 
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "androidx.test:core:$androidxTest"
+
 
 }

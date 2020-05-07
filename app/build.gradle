@@ -91,8 +91,8 @@ dependencies {
 //    def robolectricVersion = "4.3"
 //    def androidxTestRules = "1.2.0-alpha04"
 //    def mockWebServerVersion = "3.9.0"
-//    def mockitoKotlinVersion = "2.2.0"
-//    def mockitoInlineVersion = "2.21.0"
+    def mockitoKotlinVersion = "2.2.0"
+    def mockitoInlineVersion = "2.21.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -153,4 +153,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
+
 }

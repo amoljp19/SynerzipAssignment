@@ -22,7 +22,7 @@ val networkModule = module {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
             .baseUrl(Constants.URL)
-            .addConverterFactory(MoshiConverterFactory.create(/*Moshi.Builder().build()*/))
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
 

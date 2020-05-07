@@ -64,4 +64,28 @@ object MockTestUtil {
     )
 
     fun mockEntryList() = listOf(mockEntry())
+
+    fun mockApiFeedResponse() = ApiFeedResponse(
+        feed = Feed(
+            author = Author(
+                name = Name(label = "iTunes Store"),
+                uri = Uri(label = "http://www.apple.com/itunes/")
+            ),
+            entry = mockEntryList(),
+            icon = Icon(label = "http://itunes.apple.com/favicon.ico"),
+            id = IdX(label = "https://itunes.apple.com/us/rss/newfreeapplications/limit=2/json"),
+            link = listOf(
+                LinkX(
+                    attributes = AttributesXXXXXXXX(
+                        href = "https://itunes.apple.com/WebObjects/MZStore.woa/wa/storeFront?cc=us",
+                        rel = "alternate"
+                    )
+                )
+            ),
+            rights = RightsX(label = "Copyright 2008 Apple Inc."),
+            title = TitleX(label = "iTunes Store: New Free Applications"),
+            updated = Updated(label = "2020-05-07T02:46:20-07:00")
+
+        )
+    )
 }
